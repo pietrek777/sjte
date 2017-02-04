@@ -33,8 +33,12 @@ public class Game {
 			printPlayers();
 			//// TODO: 04.02.2017 Create new round
 		}
-
-
+		System.out.println("The Game has ended!");
+		Arrays.sort(players);
+		System.out.println("The winner is " + players[0].getName());
+		System.out.println("Players stats: ");
+		printPlayers();
+		System.out.println("Thanks for playing");
 	}
 	private boolean isGameFinished(){
 		for (Player p : players) { if(p.getPoints()>=1000) return true; }

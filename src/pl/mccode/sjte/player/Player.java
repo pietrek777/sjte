@@ -2,7 +2,7 @@ package pl.mccode.sjte.player;
 
 import java.util.Objects;
 
-public class Player {
+public class Player implements Comparable{
 	private String name;
 	private int points;
 	private int bombs;
@@ -15,7 +15,7 @@ public class Player {
 		return points;
 	}
 	public void addPoints(int points){
-		this.points += points;
+		if(points>0)this.points += points;
 	}
 	public int getBombs() {
 		return bombs;
@@ -52,5 +52,14 @@ public class Player {
 				", points= " + points +
 				", bombs= " + bombs +
 				" }";
+	}
+
+	@Override
+	public int compareTo(Object p2) {
+		if(p2 instanceof Player){
+			Player p = (Player) p2;
+			return getPoints() - p.getPoints();
+		}
+		else return -1;
 	}
 }
