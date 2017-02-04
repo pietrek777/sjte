@@ -1,4 +1,4 @@
-package pl.mccode.sjte.card.utils;
+package pl.mccode.sjte.util;
 
 import pl.mccode.sjte.card.Card;
 import pl.mccode.sjte.card.meta.CardDeck;

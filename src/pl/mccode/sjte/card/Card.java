@@ -38,7 +38,7 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return "Card: { " + deck + ", " + suit + " }";
+		return deck + " of " + suit;
 	}
 	public String toUnicodeString(){
 		return deck.getDeckSymbol() + " " + suit.getUnicodeSymbol() ;

@@ -1,5 +1,6 @@
 package pl.mccode.sjte.game;
 
+import pl.mccode.sjte.game.round.Round;
 import pl.mccode.sjte.player.Player;
 
 import java.util.Arrays;
@@ -28,10 +29,11 @@ public class Game {
 		printPlayers();
 		while(!isGameFinished()){
 			roundNumber++;
-			System.out.println("Round " + roundNumber);
-			System.out.println("Players stats: ");
+			System.out.println("Current players stats: ");
 			printPlayers();
-			//// TODO: 04.02.2017 Create new round
+			System.out.println("Round " + roundNumber);
+			Round round = new Round(players);
+			movePlayersArray();
 		}
 		System.out.println("The Game has ended!");
 		Arrays.sort(players);
@@ -46,5 +48,12 @@ public class Game {
 	}
 	private void printPlayers(){
 		for (Player p : players) System.out.println(p);
+	}
+	private void movePlayersArray(){
+		Player temp = players[0];
+		for(int i=0; i<players.length-1; i++){
+			players[i]=players[i+1];
+		}
+		players[players.length-1] = temp;
 	}
 }
